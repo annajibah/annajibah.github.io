@@ -4,34 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Key-Ko an-Najibah</title>
+    <title>Key-Ko An-Najibah</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <h3>Key-Ko an-Najibah</h3>
-        <navbar>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#profile">Profile</a></li>
-                <li><a href="#portfolio">Portofolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </navbar>
-    </header>
+    <nav>
+        <h3>Key-Ko An-Najibah</h3>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section id="home" class="hero">
-            <div class="hero-content">
+            <div class="content">
                 <h1>Hai, I'm Key-Ko an-Najibah</h1>
                 <p> Best Graduate in Communication Science with Professional Experience as a Public Speaker.</p>
-                <a href="#profile" class="btn">Kenali Lebih Dekat</a>
+                <a href="#about" class="btn">Kenali Lebih Dekat</a>
             </div>
         </section>
 
 
-        <section id="profile" class="profile">
+        <section id="about" class="hero">
             <h2>About Me</h2>
             <p>
                 Key-Ko an-Najibah, lulusan terbaik Program Studi S1 Ilmu Komunikasi Universitas Gajayana Malang dengan
@@ -52,11 +51,10 @@
             </div>
         </section>
 
-        <section class="timeline-section">
-            <h2>03 EXPERIENCE</h2>
+        <section id="experience" class="hero">
+            <h2>EXPERIENCE</h2>
             <div class="timeline">
-
-                <div class="timeline-item left">
+                <div class="item left">
                     <div class="content">
                         <span class="year">2023-2024</span>
                         <h3>Divisi Marketing</h3>
@@ -65,7 +63,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item right">
+                <div class="item right">
                     <div class="content">
                         <span class="year">2024</span>
                         <h3>Jurnalis</h3>
@@ -75,31 +73,34 @@
                     </div>
                 </div>
 
-                <div class="timeline-item left">
+                <div class="item left">
                     <div class="content">
                         <span class="year">2023-NOW</span>
                         <h3>Talent and Voice Over Talent</h3>
                         <h4>Freelance</h4>
-                        <p>Dubbing iklan dan berita di Agropolitan TV serta iklan properti. Menjadi talent pemasaran properti</p>
+                        <p>Dubbing iklan dan berita di Agropolitan TV serta iklan properti. Menjadi talent pemasaran
+                            properti</p>
                     </div>
                 </div>
-                <div class="timeline-item right master-ceremony">
+                <div class="item right">
                     <div class="content">
                         <span class="year">2023-NOW</span>
                         <h3>Master of Ceremony</h3>
                         <h4>Freelance</h4>
-                        <p>Membawakan acara formal(gathering, ceremony event, dan weedding) ataupun nonformal ditingkat kota maupun nasional</p>
+                        <p>Membawakan acara formal(gathering, ceremony event, dan weedding) ataupun nonformal ditingkat
+                            kota maupun nasional</p>
                     </div>
                 </div>
-                <div class="timeline-item left">
+                <div class="item left">
                     <div class="content">
                         <span class="year">2022-NOW</span>
                         <h3>Presenter</h3>
                         <h4>Agropolitan Televisi</h4>
-                        <p>Reportase lapangan menjadi host dalam program dialog dan membawakan berita sebagai news anchor dalam program AgroNews</p>
+                        <p>Reportase lapangan menjadi host dalam program dialog dan membawakan berita sebagai news
+                            anchor dalam program AgroNews</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                <div class="item right">
                     <div class="content">
                         <span class="year">2024-NOW</span>
                         <h3>Host Live</h3>
@@ -113,26 +114,20 @@
         </section>
 
         <!-- Section Portfolio -->
-        <section id="portfolio" class="portfolio">
+        <section id="portfolio" class="hero">
             <h2>My Portfolio</h2>
-            <div class="projects">
-                <div class="project-card">
+            <div class="gallery">
+                <div class="image-card">
                     <img src="img/projectbg.jpeg" alt="Kampanye Digital">
-                    <h4>Master Ceremony</h4>
-                    <p>Proyek kampanye media sosial yang meningkatkan partisipasi publik muda dalam kegiatan sosial
-                        melalui storytelling digital.</p>
+                    <h4>Master of Ceremony (MC)</h4>
                 </div>
-                <div class="project-card">
-                    <img src="images/project2.jpg" alt="Konten Kreatif">
-                    <h4>Strategi Konten Kreatif</h4>
-                    <p>Pembuatan konten interaktif untuk meningkatkan engagement audiens di platform Instagram dan
-                        TikTok.</p>
+                <div class="image-card">
+                    <img src="img/portfolio2.jpg" alt="Konten Kreatif">
+                    <h4>Juara 1 News Anchor</h4>
                 </div>
-                <div class="project-card">
-                    <img src="images/project3.jpg" alt="Brand Communication">
-                    <h4>Brand Communication</h4>
-                    <p>Kolaborasi dengan UMKM lokal dalam membangun identitas brand dan pesan komunikasi yang konsisten.
-                    </p>
+                <div class="image-card">
+                    <img src="img/portfolio3.jpg" alt="Brand Communication">
+                    <h4>Master of Ceremony (MC)</h4>
                 </div>
             </div>
         </section>
@@ -141,11 +136,15 @@
         <section id="contact" class="contact">
             <h2>Hubungi Saya</h2>
             <p>Terbuka untuk kolaborasi, proyek komunikasi, atau diskusi seputar public relation.</p>
-            <form>
-                <input type="text" placeholder="Nama" required>
-                <input type="email" placeholder="Email" required>
-                <textarea placeholder="Pesan Anda..." rows="5" required></textarea>
-                <button type="submit">Kirim Pesan</button>
+            <form id="form">
+                <input type="text" name="name" id="name" placeholder="Nama" required autocomplete="off">
+
+                <input type="email" name="email" id="email" placeholder="Email" required>
+
+                <input type="title" name="title" id="title" placeholder="Title"  autocomplete="off" required>
+                
+                <textarea name="message" id="message" placeholder="Pesan Anda..." rows="5" required></textarea>
+                <button type="submit" id="button">Kirim Pesan</button>
             </form>
         </section>
     </main>
@@ -153,6 +152,13 @@
     <footer>
         <p>© 2025 Key-Ko an-Najibah. All rights reserved.</p>
     </footer>
-</body>
+<script src="script.js"></script>
+<script type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
+<script type="text/javascript">
+  emailjs.init('igXgpClg82GhHnWFH')
+</script>
+
+</body>
 </html>
