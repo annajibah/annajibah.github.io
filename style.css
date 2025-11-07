@@ -21,9 +21,10 @@ header {
     border-bottom: 3px solid black;
 }
 
-header navbar{
+header navbar {
     color: #0f0f0f;
 }
+
 header h3 {
     color: #000000;
     font-weight: bold;
@@ -46,6 +47,7 @@ navbar ul li {
 navbar ul li:hover {
     color: #bebebe;
 }
+
 /* ========== HERO SECTION ========== */
 .hero {
     height: 100vh;
@@ -68,7 +70,7 @@ navbar ul li:hover {
     left: 0;
     width: 100%;
     height: 200px;
-    background: linear-gradient(to bottom, rgba(0,0,0,0), #f8f9fa);
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), #f8f9fa);
 }
 
 .hero-content {
@@ -110,9 +112,9 @@ navbar ul li:hover {
 /* ========== PROFILE SECTION ========== */
 .profile {
     padding: 100px 80px;
-    background-color: #EFE9E3;
     color: #333;
     text-align: center;
+    background-color: #F0F0F0;
 }
 
 .profile h2 {
@@ -140,7 +142,7 @@ navbar ul li:hover {
     padding: 25px;
     border-radius: 10px;
     width: 280px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -150,9 +152,12 @@ navbar ul li:hover {
 
 /* ========== PORTFOLIO SECTION ========== */
 .portfolio {
-    background-color: #fff;
+    background-image: url("img/projectbg.jpeg");
     padding: 100px 80px;
     text-align: center;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .portfolio h2 {
@@ -172,14 +177,14 @@ navbar ul li:hover {
     background-color: #f8f9fa;
     border-radius: 10px;
     width: 300px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .project-card img {
@@ -290,4 +295,113 @@ footer {
 }
 
 
+.timeline-section {
+    text-align: center;
+    padding: 80px 0;
+    background-image: url("img/profile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
 
+.timeline-section h2 {
+    font-size: 3em;
+    letter-spacing: 5px;
+    margin-bottom: 80px;
+    color: #0f0f0f;
+}
+
+.timeline {
+    position: relative;
+    width: 80%;
+    margin: auto;
+}
+
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #FEA405;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    padding: 20px 40px;
+    position: relative;
+    width: 50%;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #FEA405;
+    border-radius: 50%;
+    top: 20px;
+    z-index: 1;
+}
+
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.left::before {
+    right: -9px;
+}
+
+.timeline-item.right {
+    left: 50%;
+}
+
+.timeline-item.right::before {
+    left: -9px;
+}
+
+.content {
+    background: rgba(255, 255, 255, 0.547);
+    padding: 20px;
+    border-radius: 10px;
+    /* backdrop-filter: blur(4px); */
+    border: 2px solid #ffa200;
+}
+
+.year {
+    color: #0f0f0f;
+    font-weight: bold;
+    background: #ffa200;
+    padding: 5px 10px;
+    border-radius: 7px;
+}
+
+h3 {
+    margin: 5px 0;
+}
+
+h4 {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 10px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 30px;
+        margin-bottom: 30px;
+    }
+
+    .timeline-item::before {
+        left: 0;
+    }
+
+    .timeline-item.right {
+        left: 0;
+    }
+}
