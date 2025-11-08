@@ -1,5 +1,15 @@
 const btn = document.getElementById('button');
 
+document.addEventListener("DOMContentLoaded", function() {
+  const toggle = document.getElementById("menu-toggle");
+  const navList = document.getElementById("nav-list");
+
+  toggle.addEventListener("click", () => {
+    toggle.classList.toggle("active");
+    navList.classList.toggle("active");
+  });
+});
+
 document.getElementById('form')
     .addEventListener('submit', function (event) {
         event.preventDefault();

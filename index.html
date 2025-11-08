@@ -11,7 +11,12 @@
 <body>
     <nav>
         <h3>Key-Ko An-Najibah</h3>
-        <ul>
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul id="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#experience">Experience</a></li>
@@ -19,6 +24,7 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
+
 
     <main>
         <section id="home" class="hero">
@@ -118,7 +124,7 @@
             <h2>My Portfolio</h2>
             <div class="gallery">
                 <div class="image-card">
-                    <img src="img/projectbg.jpeg" alt="Kampanye Digital">
+                    <img src="img/portfolio1.jpeg" alt="Kampanye Digital">
                     <h4>Master of Ceremony (MC)</h4>
                 </div>
                 <div class="image-card">
@@ -129,10 +135,13 @@
                     <img src="img/portfolio3.jpg" alt="Brand Communication">
                     <h4>Master of Ceremony (MC)</h4>
                 </div>
+                <div class="image-card">
+                    <img src="img/portfolio4.jpeg" alt="Brand Communication">
+                    <h4>Master of Ceremony (MC)</h4>
+                </div>
             </div>
         </section>
 
-        <!-- Section Contact -->
         <section id="contact" class="contact">
             <h2>Hubungi Saya</h2>
             <p>Terbuka untuk kolaborasi, proyek komunikasi, atau diskusi seputar public relation.</p>
@@ -141,24 +150,38 @@
 
                 <input type="email" name="email" id="email" placeholder="Email" required>
 
-                <input type="title" name="title" id="title" placeholder="Title"  autocomplete="off" required>
-                
+                <input type="title" name="title" id="title" placeholder="Title" autocomplete="off" required>
+
                 <textarea name="message" id="message" placeholder="Pesan Anda..." rows="5" required></textarea>
                 <button type="submit" id="button">Kirim Pesan</button>
             </form>
+            <div class="other-contacts">
+                <p>Other Contacts</p>
+                <div class="contact-item">
+                    <a href="https://wa.me/628123456789" target="_blank" rel="noopener noreferrer">
+                        <img src="img/whatsapp.png" alt="WhatsApp" width="40" height="40">
+                    </a>
+                    <a href="https://www.instagram.com/annajibah" target="_blank" rel="noopener noreferrer">
+                        <img src="img/instagram.png" alt="instagram" width="40" height="40">
+                    </a>
+                    <a href="https://www.linkedin.com/in/annajibah" target="_blank" rel="noopener noreferrer">
+                        <img src="img/linkedin.png" alt="linkedin" width="40" height="40">
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
 
     <footer>
         <p>© 2025 Key-Ko an-Najibah. All rights reserved.</p>
     </footer>
-<script src="script.js"></script>
-<script type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script type="text/javascript">
-  emailjs.init('igXgpClg82GhHnWFH')
-</script>
+    <script type="text/javascript">
+        emailjs.init('igXgpClg82GhHnWFH')
+    </script>
 
 </body>
+
 </html>

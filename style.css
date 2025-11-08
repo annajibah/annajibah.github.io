@@ -19,10 +19,12 @@ nav {
     justify-content: space-between;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
     border-bottom: 3px solid black;
+    position: relative;
+    z-index: 1000;
 }
 
-header h3 {
-    color: #000000;
+nav h3 {
+    color: #000;
     font-weight: bold;
     font-size: 23px;
     letter-spacing: 1px;
@@ -32,17 +34,34 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 25px;
+    transition: all 0.3s ease;
+    z-index: 999;
 }
 
 nav ul li a {
-    color: #000000;
-    cursor: pointer;
-    transition: color 0.3s ease;
+    color: #000;
+    text-decoration: none;
     font-weight: 100;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
     color: #bebebe;
+}
+
+/* ====== HAMBURGER MENU ====== */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    transition: all 0.3s ease;
 }
 
 .hero {
@@ -56,7 +75,7 @@ nav ul li a:hover {
 /* ========== HOME SECTION ========== */
 #home {
     height: 100vh;
-    background-image: url('img/homebg.jpg');
+    background-image: url('img/homebg-lands.jpg');
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,7 +135,7 @@ nav ul li a:hover {
     background-color: #F0F0F0;
     flex-direction: row;
     background: #FF9500;
-background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1) 47%, rgba(248, 249, 250, 1) 100%);
+    background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1) 47%, rgba(248, 249, 250, 1) 100%);
 }
 
 #about h2 {
@@ -154,7 +173,7 @@ background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1
 
 /* ========== EXPERIENCE SECTION ========== */
 #experience {
-    background-image: url("img/profile.jpg");
+    background-image: url("img/experiencebg-lands.jpg");
     text-align: center;
     flex-direction: column;
     position: relative;
@@ -246,7 +265,7 @@ background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1
 }
 
 /* ========== PORTFOLIO SECTION ========== */
-#portfolio::before{
+#portfolio::before {
     content: "";
     position: absolute;
     top: 0;
@@ -255,8 +274,9 @@ background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1
     height: 200px;
     background: linear-gradient(to bottom, rgba(204, 130, 46, 0.242), rgba(0, 0, 0, 0.127));
 }
+
 #portfolio {
-    background-image: url("img/projectbg.jpeg");
+    background-image: url("img/portfoliobg-lands.jpeg");
     padding: 100px 80px;
     text-align: center;
     background-position: center;
@@ -358,6 +378,20 @@ background: linear-gradient(0deg, rgba(255, 149, 0, 1) 0%, rgba(247, 165, 165, 1
     background-color: #023e8a;
 }
 
+.other-contacts {
+    width: 250px;
+    margin: 20px auto;
+}
+
+.other-contacts p {
+    margin: 10px;
+}
+
+.contact-item {
+    display: flex;
+    justify-content: space-around;
+}
+
 /* ========== FOOTER ========== */
 footer {
     background-color: #2b2d42;
@@ -369,6 +403,58 @@ footer {
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 768px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #E8E8E8;
+        flex-direction: column;
+        width: 200px;
+        text-align: right;
+        padding: 15px 30px;
+        border-left: 3px solid black;
+        border-bottom: 3px solid black;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    nav ul.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Animasi hamburger ke X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    #home {
+        background-image: url("img/homebg-potr.jpg");
+    }
+
+    #experience {
+        background-image: url("img/experiencebg-potr.jpg");
+        margin-bottom: 0;
+        padding-bottom: 50px;
+    }
+
+    #portfolio {
+        background-image: url("img/portfoliobg-potr.jpeg");
+    }
+
     .highlights {
         flex-direction: column;
         align-items: center;
@@ -395,8 +481,10 @@ footer {
     }
 
     #experience::after {
-        left: 60px; /* pindahkan garis ke sisi kiri */
-        transform: none; /* hilangkan translateX agar posisinya presisi */
+        left: 60px;
+        /* pindahkan garis ke sisi kiri */
+        transform: none;
+        /* hilangkan translateX agar posisinya presisi */
     }
 
     #experience .item {
