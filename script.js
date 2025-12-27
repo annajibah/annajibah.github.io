@@ -44,15 +44,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  prevBtn.addEventListener('click', () => {
-    if (currentIndex > 0) currentIndex--;
-    updateSlides();
-  });
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) currentIndex--;
+      updateSlides();
+    });
 
-  nextBtn.addEventListener('click', () => {
-    if (currentIndex < activeSlides.length - 1) currentIndex++;
-    updateSlides();
-  });
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < activeSlides.length - 1) currentIndex++;
+      updateSlides();
+    });
+  }
 
   window.addEventListener('load', () => {
     certificateCategories[0].click();
