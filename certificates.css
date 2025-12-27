@@ -1,4 +1,4 @@
-#certificates {
+.certificates {
   background-image: url('img/background/certificatesbg-lands.jpg');
   position: relative;
   box-shadow: 0px 69px 44px 0px #CEA660 inset;
@@ -6,14 +6,14 @@
   -moz-box-shadow: 0px 69px 44px 0px #CEA660 inset;
 }
 
-#certificates .categories {
+.certificates .categories {
   display: flex;
   gap: 10px;
   padding: 15px;
   width: 100%;
 }
 
-#certificates li {
+.certificates li {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px 0;
@@ -22,13 +22,13 @@
   text-align: center;
   cursor: pointer;
 }
-#certificates .categories li.active{
+.certificates .categories li.active{
   background:rgba(0, 0, 0, 0.575);
   color:white;
   border-color:white;
 }
 
-#certificates .content {
+.certificates .content {
   position: relative;
   display: flex;
   justify-content: center;
@@ -37,7 +37,7 @@
   overflow-x: hidden;
 }
 
-#certificates .category {
+.certificates .category {
   display: none;
   flex-direction: row;
   align-items: center;

@@ -1,4 +1,4 @@
-#portfolio {
+.folio {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -7,11 +7,11 @@
   background: #CEA660;
   background: linear-gradient(0deg, rgba(206, 166, 96, 1) 0%, rgba(197, 193, 181, 1) 71%);
 }
-#portfolio h2{
+.folio h2{
   padding: 20px 0 0;
 }
 
-#portfolio .categories {
+.folio .categories {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -24,11 +24,11 @@
   -webkit-overflow-scrolling: touch;
 }
 
-#portfolio .categories::-webkit-scrollbar {
+.folio .categories::-webkit-scrollbar {
   display: none;
 }
 
-#portfolio .category {
+.folio .category {
   background-color: #f0f0f0f0;
   border-radius: 8px;
   padding: 7px;
@@ -40,30 +40,30 @@
   transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
 }
 
-#portfolio .category.active {
+.folio .category.active {
   transform: scale(1.05);
   border: 2px solid blue;
   box-shadow: 0 10px 22px rgba(0, 0, 0, .25);
   opacity: 1;
 }
 
-#portfolio .category:hover {
+.folio .category:hover {
   transform: translateY(-3px) scale(1.03);
   box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
 }
 
-#portfolio .video {
+.folio .video {
   display: flex;
   align-items: center;
 }
 
-#portfolio .category img {
+.folio .category img {
   width: 130px;
   height: 100px;
   object-fit: cover;
 }
 
-#portfolio .content {
+.folio .content {
   width: max-content;
   display: flex;
   flex-direction: row;

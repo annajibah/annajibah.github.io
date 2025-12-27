@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const itemsAnimatable = document.querySelectorAll(".animatable")
 
-  const certificateCategories = document.querySelectorAll('#certificates .categories li');
-  const folioCategories = document.querySelectorAll('#portfolio .category');
-  const portfolioBoxes = document.querySelectorAll('#portfolio .wrapper img');
-  const allSlides = document.querySelectorAll('#certificates .slide');
+  const certificateCategories = document.querySelectorAll('.certificates .categories li');
+  const folioCategories = document.querySelectorAll('.folio .category');
+  const portfolioBoxes = document.querySelectorAll('.folio .wrapper img');
+  const allSlides = document.querySelectorAll('.certificates .slide');
   const wrapper = document.querySelector('.slider-wrapper');
   const prevBtn = document.querySelector('.prev');
   const nextBtn = document.querySelector('.next');
@@ -11,6 +12,17 @@ document.addEventListener("DOMContentLoaded", function () {
   let activeSlides = [];
   let currentIndex = 0;
 
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  }, {
+    threshold: 0
+  });
 
   function updateSlides() {
     slideActive = document.querySelector(".slide.active")
@@ -42,6 +54,11 @@ document.addEventListener("DOMContentLoaded", function () {
       currentIndex = 0;
       updateSlides();
     });
+  });
+
+  itemsAnimatable.forEach((item, index) => {
+    item.style.transitionDelay = `${index * 0.2}s`;
+    observer.observe(item);
   });
 
   if (prevBtn && nextBtn) {
