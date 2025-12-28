@@ -22,10 +22,11 @@
   text-align: center;
   cursor: pointer;
 }
-.certificates .categories li.active{
-  background:rgba(0, 0, 0, 0.575);
-  color:white;
-  border-color:white;
+
+.certificates .categories li.active {
+  background: rgba(0, 0, 0, 0.575);
+  color: white;
+  border-color: white;
 }
 
 .certificates .content {
@@ -111,4 +112,16 @@
 
 .nav-btn.next {
   margin-left: 10px;
+}
+
+@media (max-width: 480px) {
+  .slider-wrapper .slide {
+    width: 150px;
+    height: auto;
+  }
+  .slider-wrapper .slide.active {
+    width: 320px;
+    height: auto;
+  }
+
 }

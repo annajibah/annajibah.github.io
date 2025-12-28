@@ -7,106 +7,168 @@
   background: #CEA660;
   background: linear-gradient(0deg, rgba(206, 166, 96, 1) 0%, rgba(197, 193, 181, 1) 71%);
 }
-.folio h2{
-  padding: 20px 0 0;
+
+h2 {
+  text-align: center;
+  padding: 15px 0;
+  font-size: 1.4rem;
+}
+
+.folio .content {
+  width: 80vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: start;
+  margin: auto;
 }
 
 .folio .categories {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  width: 150px;
-  height: 100%;
-  gap: 8px;
-  overflow-y: auto;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-}
-
-.folio .categories::-webkit-scrollbar {
-  display: none;
-}
-
-.folio .category {
-  background-color: #f0f0f0f0;
-  border-radius: 8px;
-  padding: 7px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: max-content;
-  cursor: pointer;
-  transition: transform .25s ease, box-shadow .25s ease, opacity .25s ease;
-}
-
-.folio .category.active {
-  transform: scale(1.05);
-  border: 2px solid blue;
-  box-shadow: 0 10px 22px rgba(0, 0, 0, .25);
-  opacity: 1;
-}
-
-.folio .category:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, .2);
-}
-
-.folio .video {
-  display: flex;
-  align-items: center;
-}
-
-.folio .category img {
-  width: 130px;
-  height: 100px;
-  object-fit: cover;
-}
-
-.folio .content {
-  width: max-content;
-  display: flex;
-  flex-direction: row;
-  flex: row;
-  overflow-x: auto;
+  justify-content: center;
   gap: 10px;
-  margin: auto;
-  overflow-y: hidden;
 }
 
-.wrapper {
-  width: 960px;
+.folio .categories div {
+  width: 250px;
+  height: 135px;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  border-radius: 5px;
+  transition: transform 1s ease;
+}
+
+.folio .categories div:hover {
+  box-shadow: 0px 0px 320px 7px rgba(0, 0, 0, 0.75) inset;
+  -webkit-box-shadow: 0px 0px 320px 7px rgba(0, 0, 0, 0.75) inset;
+  -moz-box-shadow: 0px 0px 320px 7px rgba(0, 0, 0, 0.75) inset;
+}
+
+.folio .categories .active {
+  border: 3px solid #CEA660;
+  transform: translate(0, -20px);
+}
+
+.folio .categories .active p {
+  color: #f0f0f0f0;
+}
+
+.folio .categories div p {
+  width: 100%;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: rgb(180, 180, 180);
+  background-color: rgba(0, 0, 0, 0.581);
+  cursor: default;
+}
+
+.folio-wrapper {
+  width: 100%;
+  height: 100%;
   display: grid;
-  grid-template-columns: repeat(5, minmax(120px, 1fr));
-  grid-auto-rows: 120px;
-  overflow-x: hidden;
+  gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-auto-rows: 150px;
+  grid-auto-flow: dense;
   overflow-y: auto;
-  background: #f0f0f0f0;
-  scroll-behavior: smooth;
-  gap: 2px;
-  -webkit-overflow-scrolling: touch;
 }
 
-.wrapper::-webkit-scrollbar {
+.folio-wrapper::-webkit-scrollbar {
   display: none;
 }
 
-
-.wrapper img.active {
-  display: block;
-  opacity: 1;
-  transform: scale(1);
-  animation: fadePop .45s ease forwards;
+.folio-wrapper div {
+  justify-content: center;
+  align-items: center;
+  transition: transform 5s ease;
+  -webkit-animation: fadePop 5s forwards;
+  animation: fadePop 1s forwards;
 }
 
-
-.wrapper img {
+.folio-wrapper div img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
-  transition: transform .4s ease, filter .4s ease;
-  display: none;
+  border-radius: 5px;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.folio .thumbnail img {
+  width: 70px;
+  height: 70px;
+}
+.folio .thumbnail:hover {
+  box-shadow: 0px 0px 320px 7px rgba(0,0,0,0.75) inset;
+-webkit-box-shadow: 0px 0px 320px 7px rgba(0,0,0,0.75) inset;
+-moz-box-shadow: 0px 0px 320px 7px rgba(0,0,0,0.75) inset;
+}
+
+.folio-wrapper .wide {
+  grid-column: span 2;
+}
+
+.folio-wrapper .tall {
+  grid-row: span 2;
+}
+
+.folio-wrapper .big {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.folio .categories .mc {
+  background: url("img/background/folio-cat-mc.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio .categories .anchor {
+  background: url("img/background/folio-cat-anchor.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio .categories .reporter {
+  background: url("img/background/folio-cat-reporter.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio .categories .creator {
+  background: url("img/portofolio/mc-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio-wrapper .thumbnail.mc {
+  background-image: url("img/portofolio/mc-0.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio-wrapper .thumbnail.anchor {
+  background-image: url("img/portofolio/news-anchor-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio-wrapper .thumbnail.reporter {
+  background-image: url("img/portofolio/reporter-1.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.folio-wrapper .thumbnail.creator {
+  background-image: url("img/portofolio/mc-1.jpg");
+  background-position: center;
+  background-size: cover;
 }
 
 @keyframes fadePop {
@@ -114,7 +176,7 @@
     opacity: 0;
     transform: scale(.9);
   }
-  
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -122,9 +184,54 @@
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    width: 550px;
-    grid-template-columns: repeat(5, minmax(80px, 1fr));
-    grid-auto-rows: 80px;
+  .folio .content {
+    width: 95vw;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: start;
+  }
+
+  .folio .categories {
+    width: 100%;
+    flex-direction: row;
+    padding-bottom: 2px;
+    border-bottom: 2px solid black;
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  .folio .categories div {
+    width: 177px;
+    height: 100px;
+    flex-direction: row;
+  }
+
+  .folio .categories p {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+
+  .folio-wrapper {
+    height: 70vh;
+  }
+
+  .folio .categories div p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .folio .categories {
+    gap: 1px;
+  }
+
+  .folio .categories div {
+    width: 100px;
+    height: 56px;
+    flex-direction: row;
+  }
+
+  .folio .categories div p {
+    font-size: 8px;
   }
 }

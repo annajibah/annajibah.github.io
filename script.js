@@ -2,8 +2,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const itemsAnimatable = document.querySelectorAll(".animatable")
 
   const certificateCategories = document.querySelectorAll('.certificates .categories li');
-  const folioCategories = document.querySelectorAll('.folio .category');
-  const portfolioBoxes = document.querySelectorAll('.folio .wrapper img');
+const folioCategories = document.querySelectorAll(".categories div");
+  const folioItems = document.querySelectorAll(".folio-wrapper > div");
   const allSlides = document.querySelectorAll('.certificates .slide');
   const wrapper = document.querySelector('.slider-wrapper');
   const prevBtn = document.querySelector('.prev');
@@ -57,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   itemsAnimatable.forEach((item, index) => {
-    item.style.transitionDelay = `${index * 0.2}s`;
     observer.observe(item);
   });
 
@@ -76,21 +75,31 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener('load', () => {
     certificateCategories[0].click();
   });
-  function setPortfolioCategory(catElement) {
-    const target = catElement.dataset.cat;
-    folioCategories.forEach(c => c.classList.remove('active'));
-    catElement.classList.add('active');
+    
 
-    portfolioBoxes.forEach(box => {
-      if (box.dataset.cat === target) box.classList.add('active');
-      else box.classList.remove('active');
+  function showCategory(cat) {
+    folioCategories.forEach(div => {
+      if (div.dataset.cat === cat) {
+        div.classList.add("active");
+      } else {
+        div.classList.remove("active");
+      }
+    });
+    folioItems.forEach(item => {
+      if (item.dataset.cat === cat) {
+        item.style.display = "flex";
+      } else {
+        item.style.display = "none";
+      }
     });
   }
-
-  folioCategories.forEach(cat => {
-    cat.addEventListener('click', () => {
-      setPortfolioCategory(cat);
+  folioCategories.forEach(div => {
+    div.addEventListener("click", () => {
+      const cat = div.dataset.cat;
+      showCategory(cat);
     });
   });
-  setPortfolioCategory(folioCategories[0]);
+  if (folioCategories.length > 0) {
+    showCategory(folioCategories[0].dataset.cat);
+  }
 });
